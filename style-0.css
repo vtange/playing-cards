@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;/*reset page*/
+}
+a{
+	color:inherit;
+	text-decoration: none;
+}
+body {
+	margin: 0;/*reset page*/
+	margin-top: 10px;
+	background:#000;
+	text-transform: uppercase;
+	font-family: "Arial Rounded MT Bold", "Arial";
+}
+.vert-centered{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/* Cards */
+.card, #pile, #deck{
+	transition: all 0.3s ease;
+
+	position: relative;
+	height:300px;
+	width:200px;
+	background:#fff;
+	border-radius: 5px;
+	padding:10px;
+	margin:10px;
+
+	display: flex;
+	flex-direction: column;
+}
+/* upper half of card */
+.card > div:first-child{
+}
+/* the middle part of card */
+.center-stuff{
+	height:80%;
+	width:100px;
+}
+/* center smaller numbers of stuff */
+.center-stuff > div{
+	width:100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+/* make singletons centered */
+.center-stuff .card-suit{
+	margin: auto;
+}
+/* lower half of card */
+.card > div:last-child{
+	position: absolute;
+	bottom:10px;
+	right:10px;
+	transform: rotateZ(180deg)
+}
+/* number font, default black */
+.card-value{
+	width: 48px;
+	text-align: center;
+	font-size: 2em;
+	color:#222;
+}
+/* base pic is 48 x 48 */
+.card-suit{
+	background-repeat: no-repeat;
+	height:48px;
+	width: 48px;
+}
+.card-face{
+	width: 100%;
+	height:160px;
+	opacity:0.8;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+@media screen and (max-width: 1600px) {
+	.card, #pile, #deck{
+		height:200px;
+		width:135px;
+	}
+	/* upper half of card */
+	.card > div:first-child{
+	}
+	/* the middle part of card */
+	.center-stuff{
+		height:80%;
+		width:100px;
+	}
+	/* center smaller numbers of stuff */
+	.center-stuff > div{
+		margin-top: 15px;
+		margin-left: 15px;
+		width:75%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	/* make singletons centered */
+	.center-stuff .card-suit{
+		margin: auto;
+	}
+	/* lower half of card */
+	.card > div:last-child{
+		display: none;
+	}
+	/* number font, default black */
+	.card-value{
+		width: 32px;
+		text-align: center;
+		font-size: 2em;
+		color:#222;
+	}
+	/* base pic is 48 x 48 */
+	.card-suit{
+		background-repeat: no-repeat;
+		background-size: cover;
+		height:32px;
+		width: 32px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.card, #pile, #deck {
+		height:150px;
+		width:100px;
+	}
+	/* upper half of card */
+	.card > div:first-child{
+	}
+	/* the middle part of card */
+	.center-stuff{
+		display: none;
+	}
+	/* lower half of card */
+	.card > div:last-child{
+		display: none;
+	}
+	/* number font, default black */
+	.card-value{
+		width: 48px;
+		text-align: center;
+		font-size: 2em;
+		color:#222;
+	}
+	/* base pic is 48 x 48 */
+	.card-suit{
+		background-repeat: no-repeat;
+		height:48px;
+		width: 48px;
+	}
+}
